@@ -35,13 +35,9 @@ module.exports = {
     Data._tokenIdSaved = null;
     this._userIdSaved = null;
   },
-  loginWithPassword(selector, password, callback) {
-    if (typeof selector === 'string') {
-      if (selector.indexOf('@') === -1)
-        selector = {username: selector};
-      else
-        selector = {email: selector};
-    }
+  loginWithPhoneAndPassword(selector, password, callback) {
+    if (typeof selector === 'string')
+      selector = {phone: selector};
 
     this._startLoggingIn();
     call("login", {
