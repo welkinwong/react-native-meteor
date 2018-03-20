@@ -11,6 +11,7 @@ module.exports = {
     options.password = hashPassword(options.password);
 
     User._startLoggingIn();
+
     call('createUserWithPhone', options, (err, result)=>{
       User._endLoggingIn();
 
@@ -63,4 +64,4 @@ module.exports = {
   onLoginFailure(cb) {
     Data.on('onLoginFailure', cb);
   }
-}
+};
