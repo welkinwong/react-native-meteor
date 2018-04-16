@@ -117,16 +117,17 @@ export class Collection {
 
     // change mini mongo for optimize UI changes
     this._collection.upsert({ _id: id, ...modifier.$set });
-    
-    Data.waitDdpConnected(()=>{
-      call(`/${this._name}/update`, {_id: id}, modifier, err => {
-        if(err) {
-          return callback(err);
-        }
 
-        callback(null, id);
-      });
-    });
+    // 注释后使update仅在本地更新
+    // Data.waitDdpConnected(()=>{
+    //   call(`/${this._name}/update`, {_id: id}, modifier, err => {
+    //     if(err) {
+    //       return callback(err);
+    //     }
+    //
+    //     callback(null, id);
+    //   });
+    // });
   }
 
   remove(id, callback = ()=>{}) {
