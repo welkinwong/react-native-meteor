@@ -20,23 +20,23 @@ module.exports = {
       callback(err);
     });
   },
-  // changePassword(oldPassword, newPassword, callback = ()=>{}) {
-  //
+  // changePassword(oldPassword, newPassword, callback = () => {}) {
   //   //TODO check Meteor.user() to prevent if not logged
   //
-  //   if(typeof newPassword != 'string' || !newPassword) {
+  //   if (typeof newPassword != 'string' || !newPassword) {
   //     return callback('Password may not be empty');
   //   }
   //
-  //   call('changePassword',
-  //         oldPassword ? hashPassword(oldPassword) : null,
-  //         hashPassword(newPassword),
+  //   call(
+  //     'changePassword',
+  //     oldPassword ? hashPassword(oldPassword) : null,
+  //     hashPassword(newPassword),
   //     (err, res) => {
-  //
-  //     callback(err);
-  //   });
+  //       callback(err);
+  //     }
+  //   );
   // },
-  // forgotPassword(options, callback = ()=>{}) {
+  // forgotPassword(options, callback = () => {}) {
   //   if (!options.email) {
   //     return callback('Must pass options.email');
   //   }
@@ -45,7 +45,7 @@ module.exports = {
   //     callback(err);
   //   });
   // },
-  // resetPassword(token, newPassword, callback = ()=>{}) {
+  // resetPassword(token, newPassword, callback = () => {}) {
   //   if (!newPassword) {
   //     return callback('Must pass a new password');
   //   }
@@ -63,5 +63,5 @@ module.exports = {
   },
   onLoginFailure(cb) {
     Data.on('onLoginFailure', cb);
-  }
+  },
 };
